@@ -1,0 +1,291 @@
+[
+  {
+    "title": "Hand-tan",
+    "products": [
+      { "name": "Yogurt", "quantity": "2-3 tbsp" },
+      { "name": "Turmeric", "quantity": "a pinch " }
+    ],
+    "benefits": "Yoghurt that contains probiotics that boost skin brightening",
+    "directions": "Mix them and create a paste. Apply it on your hands before you shower and leave it on for at least 20 minutes for effective results.",
+    "skipItem": "",
+    "notes": " Use this paste every day for at least two weeks."
+  },
+
+  {
+    "title": "Hand-tan",
+    "products": [{ "name": "Potato", "quantity": "3 potatoes" }],
+    "benefits": "Enzyme named catecholase (present in potatoes, of course!), which helps brighten the skin tone.",
+    "directions": "Blend three potatoes and apply the paste on your tanned hands directly. You can even cut a potato in half and apply it directly to the affected area.",
+    "skipItem": "",
+    "notes": ""
+  },
+
+  {
+    "title": "Hand-tan",
+    "products": [
+      { "name": "Gram Flour(Besan)", "quantity": "1 tbsp" },
+      { "name": "Turmeric", "quantity": "1-2 pinch of turmeric" },
+      { "name": "Milk", "quantity": "2-3 tbsp" },
+      { "name": "Rose Water", "quantity": "few drops" }
+    ],
+    "benefits": "Turmeric is a magical ingredient.But, it’s not just Turmeric that works its magic here - you have to thank the exfoliant properties of Gram Flour too.",
+    "directions": "Mix all the ingredients and create a paste. Keep it on for 20 minutes every day before sleeping and witness visible results in just a few weeks.",
+    "skipItem": "You can skip rose water.",
+    "notes": ""
+  },
+
+  {
+    "title": "Hand-tan",
+    "products": [
+      { "name": "Raw milk", "quantity": "As per your need" },
+      { "name": "Turmeric", "quantity": "2-3 pinch" },
+      { "name": "Lemon Juice", "quantity": "1 lemon" }
+    ],
+    "benefits": "Of course, we don’t need to tell you that you have to thank the cleansing properties of milk for this excellent mixture",
+    "directions": "Massage it on the tanned areas and wash it off after the paste has dried up.",
+    "skipItem": "",
+    "notes": ""
+  },
+
+  {
+    "title": "Feet-tan",
+    "products": [
+      { "name": "Curd", "quantity": "As per your need" },
+      { "name": "Honey", "quantity": "As per your need" }
+    ],
+    "benefits": "Curd works as an exfoliator, honey is loaded with antioxidant properties.",
+    "directions": "Create a paste and their paste will remove tan from your legs in a jiffy and the added benefit is that it will also keep your skin moisturised.",
+    "skipItem": "",
+    "notes": "Use this thrice a week for best results."
+  },
+
+  {
+    "title": "Feet-tan",
+    "products": [
+      { "name": "Oats", "quantity": "As per your need" },
+      { "name": "Buttermilk", "quantity": "As per your need" }
+    ],
+    "benefits": "We are sure you are already familiar with the exfoliant properties of oats. But, it’s Buttermilk that makes your skin soft and supple.",
+    "directions": "Massage the mixture on your feet and legs for a few minutes and get set for tan-free skin.",
+    "skipItem": "",
+    "notes": " Follow this routine twice a week and you have found the best tan removal pack at home."
+  },
+
+  {
+    "title": "Feet-tan",
+    "products": [
+      { "name": "Cucumber", "quantity": "As per your need" },
+      { "name": "Rose Water", "quantity": "Few drops" },
+      { "name": "Lemon Juice", "quantity": "1 lemon" }
+    ],
+    "benefits": "Cucumber’s cooling properties combined with the bleaching effect of lemon will help you get rid of unwanted skin tan effectively. ",
+    "directions": "Mix cucumber juice and lemon juice with rosewater to make a paste or apply cool slices of cucumber to the tanned areas.",
+    "skipItem": "You can skip rose water.",
+    "notes": ""
+  },
+
+  {
+    "title": "Feet-tan",
+    "products": [
+      { "name": "Apple Cider Vinegar", "quantity": "As per your need" }
+    ],
+    "benefits": "Apple cider vinegar contains acetic acid, which may act as a mild chemical peel in some cases.You don’t even have to mix it with anything - Apple Cider Vinegar is an achiever on its own.",
+    "directions": "Apply some vinegar on the affected aka tanned areas before you head for a shower. Leave it on for 20 minutes and rinse it off.",
+    "skipItem": "",
+    "notes": "Apply this regularly and see visible results in only a few days."
+  },
+
+  {
+    "title": "Feet-tan",
+    "products": [
+      { "name": "Masoor Dal", "quantity": "As per your need" },
+      { "name": "Honey", "quantity": "2-3 tbsp" }
+    ],
+    "benefits": "When it comes to pulses, masoor has made it to our list of favourites. Yes, another commonly found food item that also helps in sun tan removal. ",
+    "directions": "Simply mix it with honey to make a thick paste and apply it on your legs and feet. Leave it on for 25 minutes and after the paste has dried up, scrub it off gently with water.",
+    "skipItem": "",
+    "notes": "To remove tan effectively and quickly, use this remedy on the tanned areas at least three times a week."
+  },
+
+  {
+    "title": "Face-tan",
+    "products": [
+      { "name": "Lemon juice", "quantity": "As per your need" },
+      { "name": "Honey", "quantity": "2-3 tbsp" }
+    ],
+    "benefits": "Lemon packed with ascorbic, glycolic and alpha-hydroxy acids this natural bleacher exfoliates the superficial layer of the skin, undoing any kind of sun damage and darkening. Add a dash of honey (a natural humectant) to the lemon juice for best results, as it’s known to be too drying. ",
+    "directions": "Simply mix it with honey to make a thick paste and apply it on your face. And then wash it off after 20 minutes.",
+    "skipItem": "",
+
+    "notes": "Lemon aka our star ingredient is so acidic that we wouldn’t suggest applying it on its own, especially before stepping out into the sun, as it can cause more damage than good."
+  },
+
+  {
+    "title": "Face-tan",
+    "products": [
+      { "name": "Yogurt", "quantity": "2-3 tbsp" },
+      { "name": "Gram Flour(Besan)", "quantity": "1-2 tbsp" }
+    ],
+    "benefits": "The probiotic, healthy fat and lactic acid-rich curd will cool off sunburn, soothe skin and hydrate it, while gram flour will gently exfoliate to reveal your natural glow.",
+    "directions": "Yoghurt to a spoonful of Gram Flour and combine them to form a thick paste. Apply the mixture all over your body and leave it on for 20 minutes before hopping into the shower.",
+    "skipItem": "",
+    "notes": "For plump, supple skin repeat this ritual daily for at least two weeks to completely fade your tan disappear."
+  },
+
+  {
+    "title": "Face-tan",
+    "products": [{ "name": "Tomato", "quantity": "1/2 Tomato" }],
+    "benefits": "Tomato rich in lycopene that acts as a natural sunscreen, it’s choc-a-bloc with antioxidants that fight free radical damage. Redness, skin damage and darkening will soon be issues of the past. ",
+    "directions": "Slice a tomato in half, rub the pulp all over the affected areas and let its mineral complexes commence action.",
+    "skipItem": "",
+    "notes": "But the trick is you need to act quickly. Meaning, as soon as you set foot back home."
+  },
+
+  {
+    "title": "Strawberry Skin (keratosis pilaris)",
+    "products": [
+      { "name": "Aloe Vera", "quantity": "2 tbsp" },
+      { "name": "Brown Sugar", "quantity": "2-3 tbsp" },
+      { "name": "Olive/Coconut Oil", "quantity": "as per choice" }
+    ],
+    "benefits": "Sugar being a natural exfoliator removes dead skin cells and opens up pores.The goodness of Aloe vera and olive oil hydrates and moisturises the skin surface. ",
+    "directions": "Mix all the ingredients in a bowl.Put it all over your legs and start massaging it in circular motions.Continue scrubbing your legs for 10-15 minutes.Wash off with cool water.Pat dry and apply some moisturiser",
+    "skipItem": "",
+    "notes": "Use it thrice a week to get desired results."
+  },
+
+  {
+    "title": "Strawberry Skin (keratosis pilaris)",
+    "products": [
+      { "name": "Cucumber", "quantity": "1 cup" },
+      { "name": "Rose Water", "quantity": "4-5 tbsp" },
+      { "name": "Any essential oil of choice", "quantity": "as per choice" }
+    ],
+    "benefits": "Cucumber rich in vitamin C acts as an antioxidant. This paste of rose water and cucumber clears clogged pores, soothes irritated skin and provides smooth soft legs. ",
+    "directions": "Mash the cucumber and add rose water and the essential oil to it.Mix all the ingredients to make a paste.Massage your legs with this paste and keep it on for 10-15 minutes.Wash off with cool water.Put some light moisturiser",
+    "skipItem": "",
+    "notes": "Use it regularly for a fortnight to remove strawberry spots."
+  },
+
+  {
+    "title": "Strawberry Skin (keratosis pilaris)",
+    "products": [
+      { "name": "Oatmeal", "quantity": "1/2 cup" },
+      { "name": "Baking Soda", "quantity": "2-3 tbsp" },
+      { "name": "Cream", "quantity": "1 tbsp" }
+    ],
+    "benefits": "Baking soda being an anti-inflammatory agent exfoliates the skin, whereas honey and cream soothe and smoothen the skin",
+    "directions": "Mix all the ingredients in a bowl.Smear all of it on the legs.Let it sit for 15 minutes.Slowly scrub and wash off with cool water.Pat dry and apply moisturiser.",
+    "skipItem": "",
+    "notes": "Apply this paste twice a week for getting gorgeous legs."
+  },
+
+  {
+    "title": "Hyperpigmentation",
+    "products": [
+      {
+        "name": "Apple Cider Vinegar",
+        "quantity": "1 part apple cider vinegar"
+      },
+      { "name": "Water", "quantity": "1 part water" }
+    ],
+    "benefits": "Apple cider vinegar contains acetic acid, which may act as a mild chemical peel in some cases.Apple cider vinegar also contains polyphenols. These act as antioxidants and may protect skin cells.",
+    "directions": "Apply 1 part apple cider vinegar and 1 part water to the pigmented area for a few minutes, twice daily. Rinse the area thoroughly afterward. ",
+    "skipItem": "",
+    "notes": "Keep an eye out for any signs of irritation, and stop using the vinegar if irritation appears in the area."
+  },
+
+  {
+    "title": "Hyperpigmentation",
+    "products": [
+      {
+        "name": "Yogurt",
+        "quantity": "as per choice"
+      },
+      { "name": "Milk", "quantity": "as per choice" }
+    ],
+    "benefits": "Yogurt and milk both contain lactic acid, which is a common ingredient in chemical peels for the skin. The small quantities in these foods may help with mild hyperpigmentation as well.",
+    "directions": "Applying yogurt or milk directly to the pigmented area or soaking a cotton ball in milk and applying it to the area may both be helpful home remedies.People should let the yogurt or milk sit for a few minutes, and then rinse the area thoroughly and apply moisturizer. ",
+    "skipItem": "",
+    "notes": "Repeating this process two times a day may help some people improve their skin spots."
+  },
+
+  {
+    "title": "Hyperpigmentation",
+    "products": [
+      {
+        "name": "Yogurt",
+        "quantity": "as per choice"
+      },
+      { "name": "Milk", "quantity": "as per choice" }
+    ],
+    "benefits": "Green tea and its main active ingredient, epigallocatechin-3-gallate (EGCG), may help alter pigmentation of the skin in some cases.EGCG is an antioxidant compound that could help block the processes in cells that lead to over pigmentation. The green tea leaves themselves also contain gallic acid and ellagic acid, which may help improve skin.",
+    "directions": "For people who want to use this remedy, taking an oral EGCG supplement or applying a wet green tea bag to the pigmented area for a few minutes each day may help.",
+    "skipItem": "",
+    "notes": ""
+  },
+
+  {
+    "title": "Hyperpigmentation",
+    "products": [
+      {
+        "name": "Red Onion",
+        "quantity": "as per choice"
+      }
+    ],
+    "benefits": "Red onions, or Allium cepa, may also be a helpful skin whitening agent for some people.Red onion blocks the cell actions that lead to excess pigmentation.",
+    "directions": "A simple way to use red onion is by grinding the onion up and adding it to an empty tea bag. Apply the bag to the area of hyperpigmentation, using medical tape to hold it on the skin if necessary.",
+    "skipItem": "",
+    "notes": ""
+  },
+
+  {
+    "title": "Hyperpigmentation",
+    "products": [
+      {
+        "name": "Aloe Vera",
+        "quantity": "as per choice"
+      }
+    ],
+    "benefits": " Aloe vera’s active ingredient, called aloesin or aloin, could help reduce pigmentation of the skin.",
+    "directions": "Applying aloe vera gel directly to the pigmented skin may also be a good way to reduce pigmentation over time.",
+    "skipItem": "",
+    "notes": ""
+  },
+
+  {
+    "title": "Face Mask",
+    "products": [
+      {
+        "name": "Avacado",
+        "quantity": "1/2 Avacado"
+      },
+      {
+        "name": "Honey",
+        "quantity": "1 tbsp"
+      }
+    ],
+    "benefits": "Avocado’s natural oils combined with honey’s humectant properties deeply nourish and hydrate the skin",
+    "directions": "Mash half an avocado and mix it with a tablespoon of honey. Apply for 15-20 minutes and rinse off for a supple complexion.",
+    "skipItem": "",
+    "notes": ""
+  },
+
+  {
+    "title": "Face Mask",
+    "products": [
+      {
+        "name": "Banana",
+        "quantity": "1 Banana"
+      },
+      {
+        "name": "Yogurt",
+        "quantity": "1-2 tbsp"
+      }
+    ],
+    "benefits": "Rich in vitamins and probiotics, this mask hydrates and nourishes the skin.",
+    "directions": "Mash a ripe banana and combine it with yogurt for a moisturizing boost.Leave on for 15-20 minutes and wash off with lukewarm water.",
+    "skipItem": "",
+    "notes": ""
+  }
+]

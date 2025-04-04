@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "rodrigovallades.es7-react-js-snippets",
+        "github.copilot"
+    ]
+}
