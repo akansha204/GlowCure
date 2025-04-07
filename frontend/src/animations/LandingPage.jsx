@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
 
-export default function LandingPage(props) {
+export default function LandingPage() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="h-screen">
@@ -41,6 +43,12 @@ export default function LandingPage(props) {
             ⚠️ Know your skin! Always check for allergies before trying any
             remedy—your skin’s safety comes first!
           </h1>
+          <button
+            onClick={() => navigate("/suggestion")}
+            className="mt-6 px-6 py-3 bg-[#238326] text-white font-semibold rounded-2xl hover:bg-[#2AA831] transition cursor-pointer"
+          >
+            Suggest a Remedy
+          </button>
         </motion.div>
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
@@ -48,7 +56,7 @@ export default function LandingPage(props) {
           transition={{ duration: 1, ease: "easeOut", delay: 1 }}
           className="flex flex-col mx-auto items-center w-full max-w-4xl px-6 md:px-14 pb-3 mt-5"
         >
-          <h1 className="font-bold text-3xl text-[#2AA831] text-center">
+          <h1 className="font-bold text-3xl text-[#238326] text-center">
             🌿 Nature’s Secrets at Your Fingertips! 🌿
           </h1>
           <h3 className="text-[#143117] mt-4 font-semibold text-center">
@@ -59,6 +67,35 @@ export default function LandingPage(props) {
             wonders! 💚
           </h3>
         </motion.div>
+        {/* Bottom Message */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 1 }}
+          className="flex flex-col mx-auto items-center w-full max-w-4xl px-6 md:px-14 pb-12 mt-8 text-center"
+        >
+          <h2 className="font-bold text-xl text-[#143117] mb-2">
+            🤔 Don’t know what to search?
+          </h2>
+          <p className="text-[#143117] text-md font-medium">
+            Start exploring topics like{" "}
+            <span className="text-[#CFE6D0] font-semibold">tan,</span>{" "}
+            <span className="text-[#CFE6D0] font-semibold">
+              hyperpigmentation,
+            </span>
+            <span className="text-[#CFE6D0] font-semibold">face masks,</span>
+            and{" "}
+            <span className="text-[#CFE6D0] font-semibold">
+              strawberry skin!
+            </span>
+            <br />
+            More natural remedies will be added soon based on your suggestions
+            🌱
+          </p>
+        </motion.div>
+        {/* <button className="mt-6 px-6 py-3 bg-[#238326] text-white font-semibold rounded-2xl hover:bg-[#5DA134] transition">
+          Suggest a Remedy
+        </button> */}
       </div>
     </>
   );

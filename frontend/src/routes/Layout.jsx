@@ -3,15 +3,24 @@ import Navbar from "../components/Navbar";
 import { Outlet } from "react-router";
 import useAuthStore from "../contexts/store/authStore";
 import { useEffect } from "react";
+import useLikedStore from "../contexts/store/userLikedStore";
 
 export default function Layout() {
-  const { checkAuth, loading } = useAuthStore(); // Get Zustand actions/state
+  const { checkAuth, loading, isAuthenticated } = useAuthStore(); // Get Zustand actions/state
+  const { fetchLikedRemedies } = useLikedStore();
+
   useEffect(() => {
     const fetchAuth = async () => {
       await checkAuth();
     };
     fetchAuth();
   }, [checkAuth]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchLikedRemedies(); // fetch once after login
+    }
+  }, [isAuthenticated]);
 
   if (loading)
     return (

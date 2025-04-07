@@ -1,38 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuthStore from "../contexts/store/authStore";
+import useLikedStore from "../contexts/store/userLikedStore";
+
 import RemedyCard from "../components/RemedyCard";
 import { Navigate } from "react-router";
-import { getLikedRemedies } from "../apis/RemedyApis";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 export default function Liked() {
-  const user = useAuthStore((state) => state.user);
-  const loading = useAuthStore((state) => state.loading);
-  const [remedies, setRemedies] = useState([]);
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const { user, loading } = useAuthStore();
 
-  useEffect(() => {
-    const fetchLikedRemedies = async () => {
-      if (!user) return;
-      try {
-        setIsLoading(true);
-        const data = await getLikedRemedies();
-        setRemedies(data.remedies || []);
-      } catch (err) {
-        setError("Failed to fetch liked remedies. Please try again later.");
-        console.error("Error fetching liked remedies:", err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchLikedRemedies();
-  }, [user]);
+  const {
+    likedRemedies,
+    loading: isLoading,
+    error,
+    fetchLikedRemedies,
+  } = useLikedStore();
 
   if (loading || isLoading) {
     return (
       <div className="bg-[#CFE6D0] min-h-screen flex items-center justify-center">
-        <p className="text-xl text-gray-700">Loading...</p>
+        <LoadingSpinner />
       </div>
     );
   }
@@ -64,7 +51,7 @@ export default function Liked() {
       )}
 
       <div className="max-w-6xl mx-auto">
-        {remedies.length === 0 ? (
+        {likedRemedies.length === 0 ? (
           <div className="text-center py-8">
             <p className="text-lg text-gray-600">
               You haven't liked any remedies yet. Explore our collection and
@@ -73,7 +60,7 @@ export default function Liked() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {remedies.map((remedy) => (
+            {likedRemedies.map((remedy) => (
               <RemedyCard key={remedy._id} remedy={remedy} />
             ))}
           </div>

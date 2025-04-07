@@ -1,20 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { likeRemedy } from "../apis/RemedyApis";
 import useAuthStore from "../contexts/store/authStore";
+import useLikedStore from "../contexts/store/userLikedStore";
 
 export default function RemedyCard({ remedy }) {
-  const [isLiked, setIsLiked] = useState(false);
-  const user = useAuthStore((state) => state.user);
+  const { user } = useAuthStore();
+  const { isRemedyLiked, likeRemedy, unlikeRemedy } = useLikedStore();
+
+  const liked = useLikedStore((state) => state.isRemedyLiked(remedy._id));
 
   const handleLike = async () => {
-    if (!user) return; // Don't proceed if user is not logged in
-    try {
-      await likeRemedy(remedy._id);
-      setIsLiked(!isLiked);
-    } catch (error) {
-      console.error("Error toggling like:", error);
-    }
+    if (!user) return;
+    liked ? unlikeRemedy(remedy._id) : likeRemedy(remedy);
   };
 
   return (
@@ -23,9 +20,9 @@ export default function RemedyCard({ remedy }) {
       <button
         onClick={handleLike}
         className="absolute top-4 right-4 text-xl text-[#2AA831] hover:scale-110 transition-transform duration-200"
-        aria-label={isLiked ? "Unlike remedy" : "Like remedy"}
+        aria-label={liked ? "Unlike remedy" : "Like remedy"}
       >
-        {isLiked ? <FaHeart /> : <FaRegHeart />}
+        {liked ? <FaHeart /> : <FaRegHeart />}
       </button>
 
       {/* Content Section */}

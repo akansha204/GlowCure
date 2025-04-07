@@ -45,7 +45,8 @@ export default function Home() {
           ))}
         </div>
       )}
-      <RemedySuggestionForm />
+
+      {/* <RemedySuggestionForm /> */}
     </>
   );
 }

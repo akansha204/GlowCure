@@ -46,105 +46,110 @@ export default function RemedySuggestionForm() {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-2xl mx-auto p-6 bg-[#E1F1F7] rounded-2xl shadow-lg"
-      >
-        <h2 className="text-2xl font-bold mb-4 text-[#143117]">
-          Suggest a Remedy
-        </h2>
-
-        <input
-          type="text"
-          name="title"
-          placeholder="Remedy Title"
-          value={formData.title}
-          onChange={handleChange}
-          className="w-full p-2 mb-4 rounded-lg border border-[#2AA831]"
-        />
-
-        <h3 className="font-semibold text-[#143117] mb-2">Products:</h3>
-        {formData.products.map((product, index) => (
-          <div key={index} className="flex flex-col sm:flex-row gap-2 mb-2">
-            <input
-              type="text"
-              placeholder="Product Name"
-              value={product.name}
-              onChange={(e) =>
-                handleProductChange(index, "name", e.target.value)
-              }
-              className="flex-1 p-2 rounded-lg border border-[#2AA831]"
-            />
-            <input
-              type="text"
-              placeholder="Quantity"
-              value={product.quantity}
-              onChange={(e) =>
-                handleProductChange(index, "quantity", e.target.value)
-              }
-              className="flex-1 p-2 rounded-lg border border-[#2AA831]"
-            />
-          </div>
-        ))}
-
-        {/* ✅ Add & Delete Buttons */}
-        <div className="flex gap-4 mt-2">
-          <button
-            type="button"
-            onClick={addProduct}
-            className="bg-[#2AA831] text-white px-4 py-2 rounded-lg"
-          >
-            + Add Product
-          </button>
-          <button
-            type="button"
-            onClick={deleteProduct}
-            className="bg-[#93A59A] text-white px-4 py-2 rounded-lg"
-          >
-            - Delete Product
-          </button>
-        </div>
-
-        <textarea
-          name="benefits"
-          placeholder="Benefits"
-          value={formData.benefits}
-          onChange={handleChange}
-          className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
-        />
-
-        <textarea
-          name="directions"
-          placeholder="Directions"
-          value={formData.directions}
-          onChange={handleChange}
-          className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
-        />
-
-        <input
-          type="text"
-          name="skipItem"
-          placeholder="Skip Item (Optional)"
-          value={formData.skipItem}
-          onChange={handleChange}
-          className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
-        />
-
-        <textarea
-          name="notes"
-          placeholder="Notes"
-          value={formData.notes}
-          onChange={handleChange}
-          className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
-        />
-
-        <button
-          type="submit"
-          className="w-full bg-[#143117] text-white py-2 mt-6 rounded-lg hover:bg-[#2AA831]"
+      <div className="flex flex-col mx-auto items-center w-full max-w-4xl px-6 md:px-14 pb-3 mt-5 max-h-screen">
+        <h1 className="font-bold text-3xl text-[#2AA831] text-center mb-4">
+          🌿 Suggest remedies 🌿
+        </h1>
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-2xl mx-auto p-6 bg-[#E1F1F7] rounded-2xl shadow-lg "
         >
-          Submit Suggestion
-        </button>
-      </form>
+          <h2 className="text-2xl font-bold mb-4 text-[#143117]">
+            Suggest a Remedy
+          </h2>
+
+          <input
+            type="text"
+            name="title"
+            placeholder="Remedy Title"
+            value={formData.title}
+            onChange={handleChange}
+            className="w-full p-2 mb-4 rounded-lg border border-[#2AA831]"
+          />
+
+          <h3 className="font-semibold text-[#143117] mb-2">Products:</h3>
+          {formData.products.map((product, index) => (
+            <div key={index} className="flex flex-col sm:flex-row gap-2 mb-2">
+              <input
+                type="text"
+                placeholder="Product Name"
+                value={product.name}
+                onChange={(e) =>
+                  handleProductChange(index, "name", e.target.value)
+                }
+                className="flex-1 p-2 rounded-lg border border-[#2AA831]"
+              />
+              <input
+                type="text"
+                placeholder="Quantity"
+                value={product.quantity}
+                onChange={(e) =>
+                  handleProductChange(index, "quantity", e.target.value)
+                }
+                className="flex-1 p-2 rounded-lg border border-[#2AA831]"
+              />
+            </div>
+          ))}
+
+          {/* ✅ Add & Delete Buttons */}
+          <div className="flex gap-4 mt-2">
+            <button
+              type="button"
+              onClick={addProduct}
+              className="bg-[#2AA831] text-white px-4 py-2 rounded-lg"
+            >
+              + Add Product
+            </button>
+            <button
+              type="button"
+              onClick={deleteProduct}
+              className="bg-[#93A59A] text-white px-4 py-2 rounded-lg"
+            >
+              - Delete Product
+            </button>
+          </div>
+
+          <textarea
+            name="benefits"
+            placeholder="Benefits"
+            value={formData.benefits}
+            onChange={handleChange}
+            className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
+          />
+
+          <textarea
+            name="directions"
+            placeholder="Directions"
+            value={formData.directions}
+            onChange={handleChange}
+            className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
+          />
+
+          <input
+            type="text"
+            name="skipItem"
+            placeholder="Skip Item (Optional)"
+            value={formData.skipItem}
+            onChange={handleChange}
+            className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
+          />
+
+          <textarea
+            name="notes"
+            placeholder="Notes"
+            value={formData.notes}
+            onChange={handleChange}
+            className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-[#143117] text-white py-2 mt-6 rounded-lg hover:bg-[#2AA831]"
+          >
+            Submit Suggestion
+          </button>
+        </form>
+      </div>
     </>
   );
 }

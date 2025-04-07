@@ -275,7 +275,7 @@ userRouter.post("/like/:remedyId", userMiddleware, async (req, res) => {
   }
 });
 
-userRouter.post("/unlike/:remedyId", userMiddleware, async (req, res) => {
+userRouter.delete("/unlike/:remedyId", userMiddleware, async (req, res) => {
   try {
     const { remedyId } = req.params;
     const userId = req.user.id;
