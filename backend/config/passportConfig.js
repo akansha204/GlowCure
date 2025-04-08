@@ -7,12 +7,13 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/callback",
+      callbackURL: `${process.env.BACKEND_URL}/auth/google/callback`,
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
         // Check if user already exists
-        let user = await UserModel.findOne({ googleId: profile.id });
+        // let user = await UserModel.findOne({ googleId: profile.id });
+        let user = await UserModel.findOne({ email: profile.emails[0].value });
 
         if (!user) {
           // Create new user if not found
@@ -23,6 +24,10 @@ passport.use(
             email: profile.emails[0].value,
             profilePicture: profile.photos[0].value,
           });
+        } else if (!user.googleId) {
+          // If user exists but without googleId, update it
+          user.googleId = profile.id;
+          await user.save();
         }
 
         return done(null, user);

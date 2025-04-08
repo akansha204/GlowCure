@@ -139,7 +139,7 @@ export default function Signup(isOpen, setIsOpen) {
         </div>
 
         {/* Right Side - Gradient Background */}
-        <div className="hidden md:block w-1/2 bg-gradient-to-r from-green-500 to-[#2AA831]">
+        <div className="hidden md:block w-1/2 bg-[#CFE6D0]">
           <img src="/assets/indian.jpeg" alt="" />
         </div>
       </div>
