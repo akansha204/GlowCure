@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { suggestedRemedy } from "../apis/RemedyApis";
 
 export default function RemedySuggestionForm() {
   const [formData, setFormData] = useState({
@@ -39,9 +40,28 @@ export default function RemedySuggestionForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted Data:", formData);
+    // Call the API to submit the suggestion
+    try {
+      const response = await suggestedRemedy(formData);
+      if (response.success) {
+        alert("Suggestion submitted successfully!");
+        setFormData({
+          title: "",
+          products: [{ name: "", quantity: "" }],
+          benefits: "",
+          directions: "",
+          skipItem: "",
+          notes: "",
+        });
+      } else {
+        alert(response.message || "Failed to submit suggestion.");
+      }
+    } catch (error) {
+      console.error("Error submitting suggestion:", error);
+      alert("An error occurred while submitting the suggestion.");
+    }
   };
 
   return (
@@ -128,7 +148,7 @@ export default function RemedySuggestionForm() {
           <input
             type="text"
             name="skipItem"
-            placeholder="Skip Item (Optional)"
+            placeholder="Items that can be skipped"
             value={formData.skipItem}
             onChange={handleChange}
             className="w-full p-2 mt-4 rounded-lg border border-[#2AA831]"

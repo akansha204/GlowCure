@@ -1,9 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
+import useauthStore from "../contexts/store/authStore";
 
 export default function LandingPage() {
   const navigate = useNavigate();
+  const { user } = useauthStore();
+
+  const handleSuggestRemedy = () => {
+    if (!user) {
+      alert("Please log in to suggest a remedy!");
+      return;
+    }
+    navigate("/suggestion");
+  };
   return (
     <>
       <div className="h-screen">
@@ -44,7 +54,7 @@ export default function LandingPage() {
             remedy—your skin’s safety comes first!
           </h1>
           <button
-            onClick={() => navigate("/suggestion")}
+            onClick={handleSuggestRemedy}
             className="mt-6 px-6 py-3 bg-[#238326] text-white font-semibold rounded-2xl hover:bg-[#2AA831] transition cursor-pointer"
           >
             Suggest a Remedy
