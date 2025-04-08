@@ -10,7 +10,7 @@ export default function RemedyCard({ remedy }) {
   const liked = useLikedStore((state) => state.isRemedyLiked(remedy._id));
 
   const handleLike = async () => {
-    if (!user) return;
+    if (!user) return alert("Please log in to like remedies.");
     liked ? unlikeRemedy(remedy._id) : likeRemedy(remedy);
   };
 

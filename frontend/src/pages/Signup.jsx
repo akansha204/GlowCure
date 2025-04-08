@@ -7,7 +7,7 @@ export default function Signup() {
   const { googleLogin } = useAuthStore(); // Google login function
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#CFE6D0] relative">
+    <div className="flex items-center justify-center h-screen bg-[#CFE6D0] relative">
       {/* Background Blur Effect */}
       <div className="absolute inset-0  bg-opacity-30 backdrop-blur-md"></div>
 
@@ -55,7 +55,13 @@ export default function Signup() {
         </div>
 
         {/* Right Side */}
-        <div className="hidden md:block w-1/2 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        <div className="hidden md:block w-1/2 ">
+          <img
+            src="/assets/nepali.jpeg"
+            alt=""
+            // className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );

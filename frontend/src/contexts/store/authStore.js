@@ -95,11 +95,10 @@ const useAuthStore = create((set) => ({
         return response;
       }
 
-      if (response.user) {
-        set((state) => ({
-          user: response.user, // ✅ Directly use response instead of calling checkAuthStatus
-        }));
-      }
+      set((state) => ({
+        isAuthenticated: true, // Add this line
+        user: response.user || {}, // Use empty object as fallback
+      }));
 
       return response;
     } catch (error) {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useAuthStore from "../contexts/store/authStore";
-import { useNavigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import { NavLink } from "react-router";
 
 export default function Login() {
@@ -26,7 +26,7 @@ export default function Login() {
 
       setError({});
       console.log("✅ Login successful! Redirecting...");
-      navigate("/liked");
+      navigate("/liked", { replace: true });
     } catch (error) {
       console.error("❌ Login Error:", error);
       setError({
@@ -72,7 +72,7 @@ export default function Login() {
 
           {/* Forgot Password */}
           <NavLink
-            to="/forgot-password"
+            to="/ForgetPassword"
             className="text-[#2AA831] text-sm self-start mb-4 block text-right"
           >
             Forgot your password?
@@ -107,7 +107,7 @@ export default function Login() {
         {/* Signup Redirect */}
         <p className="text-sm text-gray-600 mt-4">
           New to GlowCure?{" "}
-          <NavLink to="/SignUpPage">
+          <NavLink to="/SignUp">
             <span className="text-blue-500 cursor-pointer">Sign up</span>
           </NavLink>
         </p>

@@ -22,9 +22,9 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: {
     type: String,
-    // required: function () {
-    //   return !this.googleId;
-    // },
+    required: function () {
+      return !this.googleId;
+    },
     select: false,
   },
   googleId: { type: String, unique: true, sparse: true }, // For Google Auth users

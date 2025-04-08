@@ -92,19 +92,12 @@ userRouter.post("/login", async function (req, res) {
 
     const { email, password } = validationResult.data;
 
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ email }).select("+password");
 
     if (!user) {
       return res.status(404).json({
         success: false,
         message: "User does not exist. Kindly Signup",
-      });
-    }
-    const validPassword = loginSchema.shape.password.safeParse(password);
-    if (!validPassword.success) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid email or password",
       });
     }
 
@@ -188,6 +181,10 @@ userRouter.post("/logout", (req, res) => {
   res.clearCookie("token", { httpOnly: true, sameSite: "None", secure: true });
   return res.json({ message: "Logged out successfully" });
 });
+
+userRouter.post("/forgot-password", async (req, res) => {});
+
+userRouter.post("/reset-password", async (req, res) => {});
 
 userRouter.post("/suggestion", userMiddleware, async function (req, res) {
   try {

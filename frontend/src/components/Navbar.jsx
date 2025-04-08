@@ -1,6 +1,6 @@
 import { FaRegHeart, FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
-import { NavLink } from "react-router";
+import { Navigate, NavLink } from "react-router";
 import LogoutPopup from "./LogoutPopup";
 import useAuthStore from "../contexts/store/authStore";
 
@@ -13,6 +13,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     await logout();
     setIsOpen(false);
+    Navigate("/login");
     console.log("User logged out!");
   };
 

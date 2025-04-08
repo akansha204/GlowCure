@@ -17,6 +17,7 @@ import SignUpPage from "./components/SignUpPage.jsx";
 
 import useAuthStore from "./contexts/store/authStore";
 import RemedySuggestionForm from "./components/SuggestionForm.jsx";
+import ForgetPassword from "./pages/ForgetPassword.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="liked" element={<Liked />} />
       <Route path="SignUpPage" element={<SignUpPage />} />
       <Route path="suggestion" element={<RemedySuggestionForm />} />
+      <Route path="ForgetPassword" element={<ForgetPassword />} />
     </Route>
   )
 );

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useAuthStore from "../contexts/store/authStore";
 import useLikedStore from "../contexts/store/userLikedStore";
 
@@ -9,12 +8,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 export default function Liked() {
   const { user, loading } = useAuthStore();
 
-  const {
-    likedRemedies,
-    loading: isLoading,
-    error,
-    fetchLikedRemedies,
-  } = useLikedStore();
+  const { likedRemedies, loading: isLoading, error } = useLikedStore();
 
   if (loading || isLoading) {
     return (
