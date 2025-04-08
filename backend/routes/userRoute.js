@@ -10,6 +10,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { userMiddleware } = require("../middlewares/user");
 const { loginSchema, signUpSchema } = require("../schema/zodSchema");
+const { sendEmail } = require("../utils/emailService");
 
 const userRouter = Router();
 
@@ -182,9 +183,80 @@ userRouter.post("/logout", (req, res) => {
   return res.json({ message: "Logged out successfully" });
 });
 
-userRouter.post("/forgot-password", async (req, res) => {});
+userRouter.post("/forget-password", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const existingUser = await UserModel.findOne({ email });
+    if (!existingUser) {
+      return res.status(404).json({ message: "Email not found" });
+    }
 
-userRouter.post("/reset-password", async (req, res) => {});
+    // Generate a password reset token and send it to the user's email
+    const token = jwt.sign(
+      {
+        id: existingUser._id.toString(),
+      },
+      process.env.JWT_USER_SECRET,
+      {
+        expiresIn: "15min",
+      }
+    );
+
+    const resetLink = `${process.env.FRONTEND_URL}/reset-password/${token}`;
+
+    await sendEmail(
+      email,
+      "Reset your GlowCure Password",
+      `
+    <p>Hello,</p>
+    <p>Click here to reset your password:</p>
+    <a href="${resetLink}">Reset Password</a>
+    <p>This link will expire in 15 minutes.</p>
+  `
+    );
+
+    return res.json({ message: "Reset link sent to email." });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+userRouter.post("/reset-password", async (req, res) => {
+  try {
+    const { token, newPassword } = req.body;
+
+    if (!token || !newPassword) {
+      return res
+        .status(400)
+        .json({ message: "Token and new password required" });
+    }
+
+    let decoded;
+    try {
+      decoded = jwt.verify(token, process.env.JWT_USER_SECRET);
+    } catch (error) {
+      return res.status(400).json({ message: "Invalid or expired token" });
+    }
+
+    const userId = decoded.id;
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    const updatedUser = await UserModel.findByIdAndUpdate(userId, {
+      password: hashedPassword,
+    });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    return res.json({ message: "Password reset successfully" });
+  } catch (error) {
+    console.error("Reset Password Error:", error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
 
 userRouter.post("/suggestion", userMiddleware, async function (req, res) {
   try {

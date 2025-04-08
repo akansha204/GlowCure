@@ -1,9 +1,30 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { sendPasswordResetEmail } from "../apis/AuthApi"; // Adjust path if needed
 
 function ForgetPassword() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent page refresh
+    setError({});
+    setSuccessMessage("");
+
+    if (!email) {
+      setError({ general: "Email is required" });
+      return;
+    }
+
+    const response = await sendPasswordResetEmail(email);
+    if (response.success) {
+      setSuccessMessage(response.message);
+      setEmail(""); // Clear the input after success
+    } else {
+      setError({ general: response.message });
+    }
+  };
+
   return (
     <>
       <div className="flex items-center justify-center min-h-screen bg-[#CFE6D0] overflow-y-hidden">
@@ -12,7 +33,7 @@ function ForgetPassword() {
             Enter your email to reset password
           </p>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             {/* Email Field */}
             <input
               type="email"
@@ -24,11 +45,17 @@ function ForgetPassword() {
             />
 
             {error.general && (
-              <p className="text-red-500 text-sm">{error.general}</p>
+              <p className="text-red-500 text-sm mb-3">{error.general}</p>
+            )}
+            {successMessage && (
+              <p className="text-green-600 text-sm mb-3">{successMessage}</p>
             )}
 
-            {/* Login Button */}
-            <button className="w-full bg-[#2AA831] hover:bg-[#5DA134] text-white font-semibold py-2 px-4 rounded-lg transition-all mb-3 cursor-pointer">
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full bg-[#2AA831] hover:bg-[#5DA134] text-white font-semibold py-2 px-4 rounded-lg transition-all mb-3 cursor-pointer"
+            >
               Continue
             </button>
           </form>

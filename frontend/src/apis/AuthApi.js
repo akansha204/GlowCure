@@ -84,11 +84,6 @@ export const logoutUser = async () => {
   }
 };
 
-//google login
-// export const loginWithGoogle = () => {
-//   window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
-// };
-
 export const getGoogleUser = async () => {
   try {
     const response = await api.get("/user/auth-status"); // This now handles both Google & JWT users
@@ -99,6 +94,44 @@ export const getGoogleUser = async () => {
       success: false,
       user: null,
       error: error.response?.data?.message || "Failed to fetch user",
+    };
+  }
+};
+
+export const sendPasswordResetEmail = async (email) => {
+  try {
+    const response = await api.post("/user/forget-password", { email });
+    console.log("✅ Password Reset Email Sent:", response.data);
+    return { success: true, message: "Password reset email sent" };
+  } catch (error) {
+    console.error(
+      "❌ Password Reset Error:",
+      error.response?.data || error.message
+    );
+    return {
+      success: false,
+      message:
+        error.response?.data?.message || "Failed to send password reset email",
+    };
+  }
+};
+
+export const resetPassword = async (token, newPassword) => {
+  try {
+    const response = await api.post("/user/reset-password", {
+      token,
+      newPassword,
+    });
+    console.log("✅ Password Reset Successful:", response.data);
+    return { success: true, message: "Password reset successful" };
+  } catch (error) {
+    console.error(
+      "❌ Password Reset Error:",
+      error.response?.data || error.message
+    );
+    return {
+      success: false,
+      message: error.response?.data?.message || "Failed to reset password",
     };
   }
 };

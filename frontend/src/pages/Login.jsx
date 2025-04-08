@@ -26,7 +26,7 @@ export default function Login() {
 
       setError({});
       console.log("✅ Login successful! Redirecting...");
-      navigate("/liked", { replace: true });
+      navigate("/liked");
     } catch (error) {
       console.error("❌ Login Error:", error);
       setError({
@@ -37,7 +37,6 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#CFE6D0]">
-      <h1>dont forget to implement forgot password thing</h1>
       {/* Login Container */}
       <div className="bg-[#E1F1E7] shadow-2xl rounded-xl p-8 w-[90%] max-w-md text-center">
         <h2 className="text-2xl font-semibold text-gray-900 mb-2">
