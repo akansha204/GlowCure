@@ -33,18 +33,3 @@ passport.use(
     }
   )
 );
-
-// Serialize user to store user ID in session
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-// Deserialize user from session
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await UserModel.findById(id);
-    done(null, user);
-  } catch (error) {
-    done(error, null);
-  }
-});

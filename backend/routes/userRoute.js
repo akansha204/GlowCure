@@ -61,7 +61,7 @@ userRouter.post("/signup", async function (req, res) {
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Lax",
+      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
       maxAge: 7 * 24 * 60 * 60 * 1000, //7days
     });
     res.status(201).json({
@@ -111,7 +111,7 @@ userRouter.post("/login", async function (req, res) {
         .cookie("token", user.token, {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
-          sameSite: "Lax",
+          sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         })
         .json({ success: true, message: "Logged in successfully" });
     }
@@ -129,7 +129,7 @@ userRouter.post("/login", async function (req, res) {
     res.cookie("token", token, {
       httpOnly: true, // Prevents client-side JavaScript access
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Lax", // Protects against CSRF attacks
+      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
       maxAge: 7 * 24 * 60 * 60 * 1000, // Cookie expires in 7 days
     });
     res.json({ success: true, message: "Logged in successfully" });

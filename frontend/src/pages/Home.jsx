@@ -43,7 +43,7 @@ export default function Home() {
             {remedyResults.length === 0 ? (
               <div>
                 <h1 className="text-3xl text-green-600 font-bold text-center mt-6">
-                  Sorry, we couldn't find a remedy for your search. 🥲
+                  Sorry, we couldn't find a remedy for your search.
                 </h1>
                 <h2 className="text-xl text-green-600 font-medium text-center mt-4">
                   Want to suggest one? Head over to the{" "}

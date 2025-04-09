@@ -8,7 +8,6 @@ const path = require("path");
 const { remedyRouter } = require("./routes/remedyRoute");
 const { userRouter } = require("./routes/userRoute");
 const googleAuthRouter = require("./routes/googleAuth");
-const session = require("express-session");
 const passport = require("passport");
 
 app.use(
@@ -21,15 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 require("./config/passportConfig"); // Import Passport config
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
 app.use(passport.initialize());
-app.use(passport.session());
 
 // app.use((req, res, next) => {
 //   console.log(`Received request: ${req.method} ${req.url}`);
