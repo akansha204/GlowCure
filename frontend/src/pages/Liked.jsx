@@ -19,7 +19,8 @@ export default function Liked() {
   }
 
   if (!user) {
-    return <Navigate to="/login" replace />;
+    alert("Please log in to view your liked remedies!");
+    return <Navigate to="/" replace />;
   }
 
   const welcomeMessages = [

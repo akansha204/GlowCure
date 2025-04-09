@@ -4,7 +4,7 @@ import useAuthStore from "../contexts/store/authStore";
 
 export default function Signup() {
   const navigate = useNavigate();
-  const { googleLogin } = useAuthStore(); // Google login function
+  const { googleLogin } = useAuthStore();
 
   return (
     <div className="flex items-center justify-center h-screen bg-[#CFE6D0] relative">
@@ -20,7 +20,6 @@ export default function Signup() {
           </h2>
           <p className="text-gray-600 text-sm mb-6">Get started - it's free.</p>
 
-          {/* ✅ Fix: Use `navigate()` instead of `Navigate()` */}
           <button
             onClick={() => navigate("/SignUpPage")}
             className="w-full bg-[#2AA831] hover:bg-[#5DA134] text-white font-semibold py-2 px-4 rounded-lg transition-all mb-3 cursor-pointer"
@@ -39,7 +38,7 @@ export default function Signup() {
             className="w-full border border-gray-300 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all mb-3 cursor-pointer"
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/0/09/IOS_Google_icon.png"
+              src="/assets/google-icon.png"
               alt="Google"
               className="w-5 h-5"
             />

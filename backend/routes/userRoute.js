@@ -5,7 +5,6 @@ const {
   RemedyModel,
   UserLikedModel,
 } = require("../db");
-const { z } = require("zod");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { userMiddleware } = require("../middlewares/user");
@@ -58,9 +57,6 @@ userRouter.post("/signup", async function (req, res) {
         expiresIn: "7d",
       }
     );
-
-    // user.token = token;
-    // await user.save();
 
     res.cookie("token", token, {
       httpOnly: true,
@@ -145,11 +141,10 @@ userRouter.post("/login", async function (req, res) {
 
 userRouter.get("/auth-status", async (req, res) => {
   try {
-    // Check if user is logged in via Google OAuth (session-based auth)
     if (req.user) {
-      return res.json({ user: req.user, isAuthenticated: true }); // Directly return session user
+      return res.json({ user: req.user, isAuthenticated: true });
     }
-    const token = req.cookies.token; // Get token from cookies
+    const token = req.cookies.token;
 
     if (!token) {
       return res.status(401).json({
@@ -158,7 +153,7 @@ userRouter.get("/auth-status", async (req, res) => {
       });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_USER_SECRET); // Verify token
+    const decoded = jwt.verify(token, process.env.JWT_USER_SECRET);
     const user = await UserModel.findById(decoded.id).select(
       "firstName lastName email"
     );
@@ -169,7 +164,7 @@ userRouter.get("/auth-status", async (req, res) => {
         .json({ message: "User not found", isAuthenticated: false });
     }
 
-    res.json({ user, isAuthenticated: true }); // ✅ Fixed response format
+    res.json({ user, isAuthenticated: true });
   } catch (error) {
     console.log(error);
     return res
@@ -281,7 +276,6 @@ userRouter.post("/suggestion", userMiddleware, async function (req, res) {
         message: "Sorry, this suggestion has already been made.",
       });
     }
-    console.log("first check done");
 
     // second check b/w users and app.
     const existRemedy = await RemedyModel.find();
@@ -293,8 +287,6 @@ userRouter.post("/suggestion", userMiddleware, async function (req, res) {
         .status(400)
         .json({ message: "Sorry, it already exists in our DB." });
     }
-
-    console.log("2nd check done");
 
     await SuggestionModel.create({
       title,
@@ -322,19 +314,16 @@ userRouter.post("/like/:remedyId", userMiddleware, async (req, res) => {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    // Check if the remedy exists
     const remedy = await RemedyModel.findById(remedyId);
     if (!remedy) {
       return res.status(404).json({ message: "Remedy not found" });
     }
 
-    // Check if the user has already liked the remedy
     const existingLike = await UserLikedModel.findOne({ userId, remedyId });
     if (existingLike) {
       return res.status(400).json({ message: "Remedy already liked" });
     }
 
-    // Create a new UserLikedRemedy document
     await UserLikedModel.create({ userId, remedyId });
 
     res.status(200).json({ message: "Remedy liked successfully" });
@@ -349,7 +338,6 @@ userRouter.delete("/unlike/:remedyId", userMiddleware, async (req, res) => {
     const { remedyId } = req.params;
     const userId = req.user.id;
 
-    // Delete the UserLikedRemedy document
     await UserLikedModel.findOneAndDelete({ userId, remedyId });
 
     res.status(200).json({ message: "Remedy unliked successfully" });

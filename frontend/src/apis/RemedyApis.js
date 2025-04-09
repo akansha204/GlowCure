@@ -41,13 +41,13 @@ export const getLikedRemedies = async () => {
 };
 
 export async function suggestedRemedy(remedyData) {
-  console.log("📤 Sending data to API:", remedyData); // Debug log
+  // console.log("Sending data to API:", remedyData); // Debug log
 
   try {
     const response = await api.post("/user/suggestion", remedyData);
     return { success: true, data: response.data };
   } catch (error) {
-    console.error("❌ API Error:", error.response?.data || error.message);
+    console.error("API Error:", error.response?.data || error.message);
     return {
       success: false,
       message:

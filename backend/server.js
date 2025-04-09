@@ -1,5 +1,4 @@
 require("dotenv").config({ path: "../.env" });
-// console.log(process.env.MONGO_URL);
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -14,7 +13,7 @@ const passport = require("passport");
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: `${process.env.FRONTEND_URL}`,
     credentials: true,
   })
 );
@@ -32,10 +31,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-  console.log(`Received request: ${req.method} ${req.url}`);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(`Received request: ${req.method} ${req.url}`);
+//   next();
+// });
 
 app.use("/", remedyRouter);
 app.use("/user", userRouter);

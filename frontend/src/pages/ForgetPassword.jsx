@@ -7,7 +7,7 @@ function ForgetPassword() {
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent page refresh
+    e.preventDefault();
     setError({});
     setSuccessMessage("");
 
@@ -19,7 +19,7 @@ function ForgetPassword() {
     const response = await sendPasswordResetEmail(email);
     if (response.success) {
       setSuccessMessage(response.message);
-      setEmail(""); // Clear the input after success
+      setEmail("");
     } else {
       setError({ general: response.message });
     }

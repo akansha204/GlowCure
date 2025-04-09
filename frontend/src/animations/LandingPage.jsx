@@ -16,7 +16,7 @@ export default function LandingPage() {
   };
   return (
     <>
-      <div className="h-screen">
+      <div className="min-h-screen">
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -103,9 +103,6 @@ export default function LandingPage() {
             🌱
           </p>
         </motion.div>
-        {/* <button className="mt-6 px-6 py-3 bg-[#238326] text-white font-semibold rounded-2xl hover:bg-[#5DA134] transition">
-          Suggest a Remedy
-        </button> */}
       </div>
     </>
   );

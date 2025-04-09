@@ -15,7 +15,7 @@ function userMiddleware(req, res, next) {
       return res.status(403).json({ message: "Invalid token" });
     }
 
-    req.user = { id: decodedData.id }; // ✅ Set user object properly
+    req.user = { id: decodedData.id };
 
     next();
   } catch (error) {

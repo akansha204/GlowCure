@@ -7,14 +7,12 @@ import useAuthStore from "../contexts/store/authStore";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const user = useAuthStore((state) => state.user);
-  console.log("User in Navbar:", user);
   const logout = useAuthStore((state) => state.logout);
 
   const handleLogout = async () => {
     await logout();
     setIsOpen(false);
     Navigate("/login");
-    console.log("User logged out!");
   };
 
   return (
@@ -50,12 +48,6 @@ export default function Navbar() {
       {/* Right Side - Auth Buttons */}
       <div className="hidden lg:flex items-center gap-5 text-lg font-medium">
         {user ? (
-          // <button
-          //   onClick={handleLogout}
-          //   className="text-gray-700 hover:underline hover:text-black"
-          // >
-          //   Logout
-          // </button>
           <LogoutPopup onLogout={handleLogout} /> // Insert LogoutPopup here
         ) : (
           <NavLink
@@ -94,12 +86,6 @@ export default function Navbar() {
           Blog
         </NavLink>
         {user ? (
-          // <button
-          //   onClick={handleLogout}
-          //   className="text-gray-700 hover:underline hover:text-black"
-          // >
-          //   Logout
-          // </button>
           <LogoutPopup onLogout={handleLogout} /> // Insert LogoutPopup here
         ) : (
           <NavLink

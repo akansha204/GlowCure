@@ -4,9 +4,9 @@ import { Navigate, useNavigate } from "react-router";
 import { NavLink } from "react-router";
 
 export default function Login() {
-  const login = useAuthStore((state) => state.login); // Zustand login function
+  const login = useAuthStore((state) => state.login);
   const navigate = useNavigate();
-  const { googleLogin } = useAuthStore(); // Google login function
+  const { googleLogin } = useAuthStore();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,10 +25,10 @@ export default function Login() {
       }
 
       setError({});
-      console.log("✅ Login successful! Redirecting...");
+      // console.log("Login successful! Redirecting...");
       navigate("/liked");
     } catch (error) {
-      console.error("❌ Login Error:", error);
+      console.error("Login Error:", error);
       setError({
         general: "Something went wrong. Please try again.",
       });
@@ -95,7 +95,7 @@ export default function Login() {
             className="w-full border border-gray-300 flex items-center justify-center gap-2 py-2 px-4 rounded-lg hover:bg-gray-100 transition-all cursor-pointer"
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/0/09/IOS_Google_icon.png"
+              src="/assets/google-icon.png"
               alt="Google"
               className="w-5 h-5"
             />

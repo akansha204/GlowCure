@@ -4,7 +4,7 @@ const { RemedyModel } = require("../db");
 const remedyRouter = Router();
 
 remedyRouter.get("/get-remedies", async (req, res) => {
-  console.log("API hit with query:", req.query); // Debug log
+  // console.log("API hit with query:", req.query); // Debug log
   try {
     const { search } = req.query;
     let remedies;

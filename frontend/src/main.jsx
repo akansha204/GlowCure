@@ -14,10 +14,8 @@ import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Liked from "./pages/Liked.jsx";
 import SignUpPage from "./components/SignUpPage.jsx";
-
-import useAuthStore from "./contexts/store/authStore";
 import RemedySuggestionForm from "./components/SuggestionForm.jsx";
-import ForgetPassword from "./pages/forgetPassword.jsx";
+import ForgetPassword from "./pages/ForgetPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
 
 const router = createBrowserRouter(

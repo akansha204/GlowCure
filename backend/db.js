@@ -28,7 +28,7 @@ const userSchema = new Schema({
     select: false,
   },
   googleId: { type: String, unique: true, sparse: true }, // For Google Auth users
-  profilePicture: { type: String }, // Optional: Store Google profile picture
+  profilePicture: { type: String },
 });
 const userLikedRemedySchema = new mongoose.Schema({
   userId: { type: ObjectId, ref: "User", required: true },

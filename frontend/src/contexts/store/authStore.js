@@ -17,7 +17,7 @@ const useAuthStore = create((set) => ({
   checkAuth: async () => {
     try {
       const authData = await checkAuthStatus();
-      console.log("🔍 checkAuthStatus Response:", authData);
+      // console.log("checkAuthStatus Response:", authData);
 
       if (authData?.isAuthenticated && authData?.user) {
         set((state) => {
@@ -28,7 +28,7 @@ const useAuthStore = create((set) => ({
               isAuthenticated: true,
             };
           }
-          return state; // ✅ Avoids unnecessary re-renders
+          return state;
         });
       } else {
         set({
@@ -61,10 +61,10 @@ const useAuthStore = create((set) => ({
         email,
         password,
       });
-      console.log("🔍 Signup API Response:", response);
+      // console.log("Signup API Response:", response);
 
       if (!response.success) {
-        console.log("⚠️ Validation Errors Received:", response.errors);
+        // console.log("Validation Errors Received:", response.errors);
         return response;
       }
 
@@ -76,7 +76,7 @@ const useAuthStore = create((set) => ({
 
       return response;
     } catch (error) {
-      console.error("❌ Signup Error:", error.message);
+      // console.error("Signup Error:", error.message);
       return { message: "Signup failed" };
     }
   },
@@ -88,21 +88,21 @@ const useAuthStore = create((set) => ({
       }
 
       const response = await loginUser(email, password);
-      console.log("🔍 Login API Response:", response);
+      // console.log("Login API Response:", response);
 
       if (!response.success) {
-        console.log("⚠️ Validation Errors Received:", response.errors);
+        // console.log("Validation Errors Received:", response.errors);
         return response;
       }
 
       set((state) => ({
-        isAuthenticated: true, // Add this line
-        user: response.user || {}, // Use empty object as fallback
+        isAuthenticated: true,
+        user: response.user || {},
       }));
 
       return response;
     } catch (error) {
-      console.error("❌ Login Error:", error.message);
+      console.error("Login Error:", error.message);
       return { success: false, message: "Login failed" };
     }
   },

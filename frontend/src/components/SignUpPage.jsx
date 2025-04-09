@@ -2,7 +2,7 @@ import { useState } from "react";
 import useAuthStore from "../contexts/store/authStore";
 import { useNavigate } from "react-router";
 
-export default function Signup(isOpen, setIsOpen) {
+export default function Signup() {
   const signup = useAuthStore((state) => state.signup); // Zustand signup function
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ export default function Signup(isOpen, setIsOpen) {
     e.preventDefault();
     setErrors({});
     try {
-      const { firstName, lastName, email, password } = formData; // Destructure form data
+      const { firstName, lastName, email, password } = formData;
       const result = await signup(firstName, lastName, email, password);
 
       if (!result.success) {
@@ -32,8 +32,8 @@ export default function Signup(isOpen, setIsOpen) {
         );
         return;
       }
-      console.log("✅ Signup successful! Redirecting...");
-      navigate("/"); // Redirect after successful signup
+      // console.log("Signup successful! Redirecting...");
+      navigate("/");
     } catch (error) {
       console.error("Signup Error:", error);
       setErrors({ general: "An unexpected error occurred. Please try again." });

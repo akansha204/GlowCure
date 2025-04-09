@@ -36,7 +36,7 @@ function ResetPassword() {
     if (response.success) {
       setSuccessMessage(response.message);
       setTimeout(() => {
-        navigate("/login"); // Redirect to login after success
+        navigate("/login");
       }, 2000);
     } else {
       setError({ general: response.message });

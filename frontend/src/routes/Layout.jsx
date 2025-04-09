@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import useLikedStore from "../contexts/store/userLikedStore";
 
 export default function Layout() {
-  const { checkAuth, loading, isAuthenticated } = useAuthStore(); // Get Zustand actions/state
+  const { checkAuth, loading, isAuthenticated } = useAuthStore();
   const { fetchLikedRemedies } = useLikedStore();
 
   useEffect(() => {
@@ -32,7 +32,6 @@ export default function Layout() {
     <>
       <Navbar />
       <Outlet />
-      {/* <Footer /> */}
     </>
   );
 }

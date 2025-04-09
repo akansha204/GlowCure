@@ -1,20 +1,18 @@
 import api from "./api";
 
 export async function signupUser(userData) {
-  console.log("📤 Sending data to API:", userData); // Debug log
-
   try {
     const response = await api.post("/user/signup", userData, {
       withCredentials: true,
     });
 
-    console.log("✅ Signup Successful:", response.data);
+    // console.log("Signup Successful:", response.data);
     return { success: true, data: response.data };
   } catch (error) {
-    console.error("❌ Signup Error:", error.response?.data || error.message);
+    console.error("Signup Error:", error.response?.data || error.message);
 
     if (error.response?.status === 400 && error.response?.data?.errors) {
-      console.log("🛑 Zod Validation Errors:", error.response.data.errors); // Debug log
+      // console.log("Zod Validation Errors:", error.response.data.errors);
       return { success: false, errors: error.response.data.errors };
     }
 
@@ -38,7 +36,7 @@ export const loginUser = async (email, password) => {
       },
       { withCredentials: true }
     );
-    console.log("✅ Login Successful:", response.data);
+    // console.log("Login Successful:", response.data);
     return { success: true, message: "Login successful" };
   } catch (error) {
     console.error("Login Error:", error.response?.data || error.message);
@@ -55,14 +53,14 @@ export const loginUser = async (email, password) => {
 export const checkAuthStatus = async () => {
   try {
     const response = await api.get("/user/auth-status", {
-      withCredentials: true, // Ensures cookies/sessions are sent
+      withCredentials: true,
     });
 
-    console.log("✅ Auth Check Success:", response.data);
+    // console.log("Auth Check Success:", response.data);
     return { user: response.data.user, isAuthenticated: true };
   } catch (error) {
     console.error(
-      "❌ Auth Check Error:",
+      "Auth Check Error:",
       error.response?.data?.message || error.message
     );
 
@@ -101,11 +99,11 @@ export const getGoogleUser = async () => {
 export const sendPasswordResetEmail = async (email) => {
   try {
     const response = await api.post("/user/forget-password", { email });
-    console.log("✅ Password Reset Email Sent:", response.data);
+    // console.log("Password Reset Email Sent:", response.data);
     return { success: true, message: "Password reset email sent" };
   } catch (error) {
     console.error(
-      "❌ Password Reset Error:",
+      "Password Reset Error:",
       error.response?.data || error.message
     );
     return {
@@ -122,11 +120,11 @@ export const resetPassword = async (token, newPassword) => {
       token,
       newPassword,
     });
-    console.log("✅ Password Reset Successful:", response.data);
+    // console.log("Password Reset Successful:", response.data);
     return { success: true, message: "Password reset successful" };
   } catch (error) {
     console.error(
-      "❌ Password Reset Error:",
+      "Password Reset Error:",
       error.response?.data || error.message
     );
     return {

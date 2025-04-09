@@ -30,7 +30,6 @@ export default function RemedySuggestionForm() {
     });
   };
 
-  // ✅ Deletes the most recently added product
   const deleteProduct = () => {
     if (formData.products.length > 1) {
       setFormData({
@@ -66,7 +65,7 @@ export default function RemedySuggestionForm() {
 
   return (
     <>
-      <div className="flex flex-col mx-auto items-center w-full max-w-4xl px-6 md:px-14 pb-3 mt-5 max-h-screen">
+      <div className="flex flex-col mx-auto items-center w-full max-w-4xl px-6 md:px-14 pb-3 mt-5 min-h-screen">
         <h1 className="font-bold text-3xl text-[#2AA831] text-center mb-4">
           🌿 Suggest remedies 🌿
         </h1>
@@ -111,7 +110,7 @@ export default function RemedySuggestionForm() {
             </div>
           ))}
 
-          {/* ✅ Add & Delete Buttons */}
+          {/* Add & Delete Buttons */}
           <div className="flex gap-4 mt-2">
             <button
               type="button"
