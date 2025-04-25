@@ -9,7 +9,7 @@ export default function LandingPage() {
 
   const handleSuggestRemedy = () => {
     if (!user) {
-      alert("Please log in to suggest a remedy!");
+      navigate("/login");
       return;
     }
     navigate("/suggestion");
