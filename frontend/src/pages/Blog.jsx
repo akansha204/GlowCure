@@ -1,10 +1,13 @@
 import React from "react";
-
+import lemonImage from "/assets/lemon.jpg";
+import aloeImage from "/assets/aloevera.jpg";
+import turmericImage from "/assets/turmeric.jpg";
+import riceImage from "/assets/rice-water.jpg";
 const blogData = [
   {
     id: 1,
     title: "Lemon: A Natural Skin Brightener",
-    image: "./assets/lemon.jpg",
+    image: lemonImage,
     description:
       "Lemon is packed with Vitamin C and antioxidants that help brighten your skin and reduce dark spots. It also has antibacterial properties, making it great for treating acne. However, always dilute lemon juice before applying it to avoid irritation.",
     benefits: [
@@ -17,7 +20,7 @@ const blogData = [
   {
     id: 2,
     title: "Aloe Vera: Nature's Soothing Gel",
-    image: "./assets/aloevera.jpg",
+    image: aloeImage,
     description:
       "Aloe Vera is renowned for its soothing and healing properties. It hydrates the skin deeply, reduces inflammation, and helps in the healing of small cuts, burns, and acne scars. Its cooling effect makes it ideal for sensitive or irritated skin.",
     benefits: [
@@ -30,7 +33,7 @@ const blogData = [
   {
     id: 3,
     title: "Turmeric: Golden Glow Enhancer",
-    image: "./assets/turmeric.jpg",
+    image: turmericImage,
     description:
       "Turmeric is a powerful anti-inflammatory and antioxidant-rich spice that promotes a natural glow. It helps in reducing blemishes, calming skin conditions, and fighting signs of aging. A staple in traditional skincare remedies, turmeric leaves the skin looking radiant.",
     benefits: [
@@ -44,7 +47,7 @@ const blogData = [
   {
     id: 4,
     title: "Rice Water: Ancient Beauty Secret",
-    image: "./assets/rice-water.jpg",
+    image: riceImage,
     description:
       "Rice water has been used for centuries in Asian skincare routines. It’s rich in vitamins, minerals, and amino acids that nourish the skin. Rice water brightens the complexion, reduces pore size, and promotes a soft, radiant glow.",
     benefits: [
