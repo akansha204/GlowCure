@@ -14,7 +14,7 @@ GlowCure is a modern, full-stack skincare remedy finder that helps users discove
 ## 📸 Screenshots
 
 <!-- Paste your screenshots here -->
-<img src="screenshots/homePage.png" alt="Home Page" width="100%" />
+<img src="frontend/public/screenshots/homePage.png" alt="Home Page" width="100%" />
 <br/>
 <img src="https://raw.githubusercontent.com/akansha204/GlowCure/main/screenshots/searchRemedies.png" alt="Remedy Cards" width="100%" />
 <br/>
@@ -51,14 +51,14 @@ cd GlowCure
 
 ### 2. Setup Backend
 ```bash
-cd server
+cd backend
 npm install
 npm run dev
 ```
 
 ### 3. Setup Frontend
 ```bash
-cd client
+cd frontend
 npm install
 npm run dev
 ```
