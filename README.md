@@ -14,16 +14,15 @@ GlowCure is a modern, full-stack skincare remedy finder that helps users discove
 ## 📸 Screenshots
 
 <!-- Paste your screenshots here -->
-<img src="![image](https://github.com/user-attachments/assets/7ff4d0f5-a41f-41df-ba1e-69c9cc4b6880)
-" alt="Home Page" width="100%" />
+<img src="./screenshots/homePage.png" alt="Home Page" width="100%" />
 <br/>
-<img src="<!-- Add Remedy Card SS here -->" alt="Remedy Cards" width="100%" />
+<img src="./screenshots/searchRemedies.png" alt="Remedy Cards" width="100%" />
 <br/>
-<img src="<!-- Add Search or Pagination SS here -->" alt="Search Results with Pagination" width="100%" />
+<img src="./screenshots/blogs.png" alt="Blogs Page" width="100%" />
 <br/>
-<img src="<!-- Add Liked Remedies Page SS here -->" alt="Liked Remedies" width="100%" />
+<img src="./screenshots/likedRemedies.png" alt="Liked Remedies" width="100%" />
 <br/>
-<img src="<!-- Add Submit Remedy Form SS here -->" alt="Remedy Suggestion Form" width="100%" />
+<img src="./screenshots/suggestRemedy.png" alt="Remedy Suggestion Form" width="100%" />
 
 ---
 
